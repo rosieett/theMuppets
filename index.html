@@ -4,82 +4,97 @@
     <meta charset="utf-8">
     <title>The Muppet Sorter</title>
 
-    <optionnk rel="stylesheet" href="css/normaoptionze.css">
-    <optionnk rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet"href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700&display=swap" rel="stylesheet">
+
+
+
   </head>
   <body>
 
-  <header class="topNav">
-    <h1 class="title">The Muppet Sorter</h1>
+    <header>
+      <h1 class="title">The Muppet Sorter</h1>
 
-    <div class="topNav">
-      <form class="navFilters">
-        <label>Seen in</label>
-        <select>
-          <option>--</option>
-          <option>The Muppet Show</option>
-          <option>Sesame Street</option>
-          <option>All</option>
-        </select>
-      </form>
-      <form class="navFilters">
-        <label>Muppet Category</label>
-        <select>
-          <option>--</option>
-          <option>Animal</option>
-          <option>Monster</option>
-          <option>Person</option>
-        </select>
-      </form>
-      <form class="navFilters">
-        <label>First performed/voiced by</label>
-        <select>
-          <option>--</option>
-          <option>Abby Hadfield</option>
-          <option>Bill Barretta</option>
-          <option>Brian Henson</option>
-          <option>Brian Muehl</option>
-          <option>Camille Bonora</option>
-          <option>Carl Banas </option>
-          <option>Carmen Osbahr</option>
-          <option>Caroll Spinney</option>
-          <option>Dave Goelz</option>
-          <option>David Rudman</option>
-          <option>Fran Brill</option>
-          <option>Frank Oz</option>
-          <option>Frankie Cordero</option>
-          <option>Graham Fletcher</option>
-          <option>Jerry Nelson</option>
-          <option>Jim Henson</option>
-          <option>Joey Mazzarino</option>
-          <option>John Lovelady</option>
-          <option>John Tartagoptiona</option>
-          <option>Judy Sladky</option>
-          <option>Kevin Clash</option>
-          <option>Lesoptione Carrara-Rudolph</option>
-          <option>Louise Gold</option>
-          <option>Martin P. Robinson</option>
-          <option>Matt Robinson</option>
-          <option>Peter optionnz</option>
-          <option>Richard Hunt</option>
-          <option>Stephanie D'Abruzzo</option>
-          <option>Steve Whitmire</option>
-          <option>Toby Towson </option>
-          <option>unknown</option>
-          <option>Various</option>
-        </select>
-      </form>
-      <div class="navFilters">
-        <h3><a href="#">Show chronological order of character introduction</a></h3>
+      <aside class="topNav">
+        <form class="navFilters show">
+          <label>Seen in</label>
+          <select>
+            <option>--</option>
+            <option>The Muppet Show</option>
+            <option>Sesame Street</option>
+            <option>All</option>
+          </select>
+        </form>
+
+        <form class="navFilters category">
+          <label>Muppet Category</label>
+          <select>
+            <option>--</option>
+            <option>Animal</option>
+            <option>Monster</option>
+            <option>Person</option>
+          </select>
+        </form>
+
+        <form class="navFilters performer">
+          <label>First performed/voiced by</label>
+          <select>
+            <option>--</option>
+            <option>Abby Hadfield</option>
+            <option>Bill Barretta</option>
+            <option>Brian Henson</option>
+            <option>Brian Muehl</option>
+            <option>Camille Bonora</option>
+            <option>Carl Banas </option>
+            <option>Carmen Osbahr</option>
+            <option>Caroll Spinney</option>
+            <option>Dave Goelz</option>
+            <option>David Rudman</option>
+            <option>Fran Brill</option>
+            <option>Frank Oz</option>
+            <option>Frankie Cordero</option>
+            <option>Graham Fletcher</option>
+            <option>Jerry Nelson</option>
+            <option>Jim Henson</option>
+            <option>Joey Mazzarino</option>
+            <option>John Lovelady</option>
+            <option>John Tartagoptiona</option>
+            <option>Judy Sladky</option>
+            <option>Kevin Clash</option>
+            <option>Lesoptione Carrara-Rudolph</option>
+            <option>Louise Gold</option>
+            <option>Martin P. Robinson</option>
+            <option>Matt Robinson</option>
+            <option>Peter optionnz</option>
+            <option>Richard Hunt</option>
+            <option>Stephanie D'Abruzzo</option>
+            <option>Steve Whitmire</option>
+            <option>Toby Towson </option>
+            <option>unknown</option>
+            <option>Various</option>
+          </select>
+        </form>
+
+        <!--<div class="navFilters ">
+          <h3><a href="#">Show chronological order of character introduction</a></h3>
+        </div>-->
+      </aside>
+    </header>
+
+    <main class="sortingArea">
+      <div class="characterGrid">
+        <div class="gridSquare">
+          <img src="images/muppetImages/abbyCadabby.png" class="muppetImg" alt="Abby Cadabby">
+        </div>
+        <div class="gridSquare">
+          <img src="images/muppetImages/afghanHound.png" class="muppetImg" alt="Afghan Hound">
+        </div>
+      
+
       </div>
-    </div>
-  </header>
-
-  <main class="sortingArea">
-    <div class="characterGrid">
-    </div>
-  </main>
+    </main>
 
 
-  </body>
-</html>
+    </body>
+  </html>
