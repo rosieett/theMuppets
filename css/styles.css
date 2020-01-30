@@ -11,12 +11,6 @@ body{
   font-weight: 700;
 }
 
-.topNav{
-  width: 100%;
-  background-color: #eee;
-  height: 70px;
-}
-
 .navFilters{
   display: inline-block;
   float: left;
@@ -26,7 +20,7 @@ body{
 }
 
 
-.characterGrid{
+.grid{
   width: 100%;
   margin-top: 20px;
 }
@@ -37,5 +31,49 @@ body{
   float: left;
   margin: 10px;
   box-shadow: 0 6px 6px -8px rgba(0,0,0,.7);
+
+}
+
+.grid-item {
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin: 0 25px 0 25px;
+}
+
+.grid-item--width2 { width: 100px; }
+.grid-item--height2 { height: 100px; }
+
+
+.filters{
+  display: inline-block;
+  width: 100%;
+}
+
+.button{
+  display: inline-block;
+  padding: 5px 50px;
+  margin-bottom: 10px;
+  background-color: #F8F8F8;
+  border: .5px solid #ddd;
+  margin-left: -7px;
+}
+
+.button:hover, .button::selection{
+  background-color: #cfcfcf;
+  font-weight: 700;
+}
+
+.button-group{
+  display: inline-block;
+  margin: 10px;
+}
+
+.separator {
+  background-color: #fff;
+  border:none;
+  margin-right: 5px;
+  font-weight: 700;
+  text-transform: uppercase;
 
 }
