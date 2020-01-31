@@ -1,13 +1,13 @@
-//c3 Charts
-// var chart = c3.generate({
-//     bindto: '#chart',
-//     data: {
-//       columns: [
-//         ['data1', 30, 200, 100, 400, 150, 250],
-//         ['data2', 50, 20, 10, 40, 15, 25]
-//       ]
-//     }
-// });
+//create a click function
+$('button').on('click', function(){
+
+  //get the data-category attr
+  var dataType = $(this).attr('data-type');
+
+  //get the data-show attr
+  var dataShow = $(this).attr('data-show');
+
+});
 
 // init Isotope
 var $grid = $('.grid').isotope({

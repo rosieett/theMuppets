@@ -84,15 +84,15 @@
         </div>
         <div class="button-group filter-button-group">
           <button class="separator">Type of Muppet:</button>
-          <button class="button" data-filter=".animal">Animal</button>
-          <button class="button" data-filter=".person">Person</button>
+          <button class="button" data-type=".animal">Animal</button>
+          <button class="button" data-type=".person">Person</button>
           <button class="button" data-filter=".person">Monster</button>
           </div>
         </div>
         <div class="button-group filter-button-group">
           <div class="button-set">
             <button class="separator">Appeared on:</button>
-            <button class="button" data-filter=".sesameStreet">Sesame Street</button>
+            <button class="button" data-show=".sesameStreet">Sesame Street</button>
             <button class="button" data-filter=".theMuppetShow">The Muppet Show</button>
           </div>
         </div>
@@ -101,43 +101,45 @@
     </header>
 
     <section class="sortingArea">
-      <div class="grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "fitRows" }'>
+      <div class="grid">
 
-        <!--<div class="gridSquare">
+<!-- typical div -->
+        <div class="grid-item">
           <img src="images/muppetImages/abbyCadabby.png" class="muppetImg" alt="Abby Cadabby" data-name="Abby Cadabby" data-show="sesameStreet" data-category="Person" data-voice="Leslie Carrara-Rudolph" data-episode="4109" data-year="2006">
         </div>
-        <div class="gridSquare">
+
+        <div class="grid-item">
           <img src="images/muppetImages/afghanHound.png" class="muppetImg" alt="Afghan Hound" data-name="Afghan Hound" data-show="theMuppetShow" data-category="Animal" data-voice="Louise Gold" data-episode="217" data-year="1977">
+        </div>
+
+        <div class="grid-item">
+          <img src="images/muppetImages/aliceSnuffalupagus.png" class="muppetImg" alt="Alice Snuffalupagus" data-name="Alice Snuffalupagus" data-show="sesameStreet" data-category="Animal" data-voice="Judy Sladky" data-episode="2410" data-year="1988">
+        </div>
+
+        <div class="grid-item">
+          <img src="images/muppetImages/alistairCookie.png" class="muppetImg" alt="Alistair Cookie" data-name="Alistair Cookie" data-show="sesameStreet" data-category="Monster" data-voice="Frank Oz" data-episode="1162" data-year="1978">
+        </div>
+
+<!-- isotypo divs -->
+      <!-- <div class="grid-item sesameStreet person">
+        <img src="images/muppetImages/abbyCadabby.png" class="muppetImg" alt="Abby Cadabby">
+      </div>
+
+      <div class="grid-item theMuppetShow animal">
+        <img src="images/muppetImages/afghanHound.png" class="muppetImg" alt="Afghan Hound">
+      </div>
+
+      <div class="grid-item theMuppetShow person">
+        <img src="images/muppetImages/alistairCookie.png" class="muppetImg" alt="Alistair Cookie">
+      </div>
+
+      <div class="grid-item sesameStreet animal">
+          <img src="images/muppetImages/aliceSnuffalupagus.png" class="muppetImg" alt="Alice Snuffalupagus">
         </div> -->
-
-        <div class="grid-item sesameStreet person">
-          <img src="images/muppetImages/abbyCadabby.png" class="muppetImg" alt="Abby Cadabby">
-        </div>
-
-        <div class="grid-item theMuppetShow animal">
-          <img src="images/muppetImages/afghanHound.png" class="muppetImg" alt="Afghan Hound">
-        </div>
-
-        <div class="grid-item theMuppetShow person">
-          <img src="images/muppetImages/alistairCookie.png" class="muppetImg" alt="Alistair Cookie">
-        </div>
-
-        <div class="grid-item sesameStreet animal">
-            <img src="images/muppetImages/aliceSnuffalupagus.png" class="muppetImg" alt="Alice Snuffalupagus">
-          </div>
-
-      <!-- data-name="Alice Snuffalupagus" data-show="sesameStreet" data-category="Animal" data-voice="Judy Sladky" data-episode="2410" data-year="1988" -->
-      <!--data-name="Alistair Cookie" data-show="sesameStreet" data-category="Monster" data-voice="Frank Oz" data-episode="1162" data-year="1978"-->
-      <!-- data-show="sesameStreet" data-category="person" -->
 
 
       </div>
     </section>
-
-<!--charts-->
-    <!-- <section>
-        <div id="chart">Charts</div>
-    </section> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
