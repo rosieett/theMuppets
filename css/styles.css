@@ -69,13 +69,17 @@ body{
   margin: 10px;
 }
 
+.buttonGroup{
+  display: inline-block;
+  margin: 10px;
+}
+
 .separator {
   background-color: #fff;
   border:none;
   margin-right: 5px;
   font-weight: 700;
   text-transform: uppercase;
-
 }
 
 .labels{
@@ -84,4 +88,5 @@ body{
     margin-right: 5px;
     font-weight: 700;
     text-transform: uppercase;
+    display: block;
 }
