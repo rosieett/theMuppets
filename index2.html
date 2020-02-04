@@ -22,18 +22,18 @@
 
       <nav class="filter">
 
-        <div class="buttonGroup">
+        <div class="buttonGroup" id="reset">
           <a href="#" class="button" data-filter="*">RESET</a>
         </div>
 
-        <div class="buttonGroup">
+        <div class="buttonGroup" id="muppetType">
           <h2 class="label">Type of Muppet:</h2>
           <a href="#" class="button" id="animal">Animal</a>
           <a href="#" class="button" id="people">People</a>
           <a href="#" class="button" id="monster">Monster</a>
         </div>
 
-        <div class="buttonGroup">
+        <div class="buttonGroup" id="showType">
           <h2 class="label">Appeared On:</h2>
           <a href="#" class="button" id="sesameStreet">Sesame Street</a>
           <a href="#" class="button" id="theMuppetShow">The Muppet Show</a>
@@ -46,28 +46,30 @@
       <section class="sortingArea">
         <div class="grid">
 
-          <div class="grid-item">
-            <img src="images/muppetImages/abbyCadabby.png" class="muppetImg" alt="Abby Cadabby" data-type="people sesameStreet">
+          <div class="grid-item" data-muppettype="people" data-showtype="sesameStreet">
+            <img src="images/muppetImages/abbyCadabby.png" class="muppetImg" alt="Abby Cadabby">
           </div>
 
-          <div class="grid-item">
+          <div class="grid-item" data-muppettype="animal" data-showtype="theMuppetShow">
             <img src="images/muppetImages/afghanHound.png" class="muppetImg" alt="Afghan Hound">
           </div>
 
-          <div class="grid-item">
+          <div class="grid-item" data-muppettype="animal" data-showtype="sesameStreet">
             <img src="images/muppetImages/aliceSnuffalupagus.png" class="muppetImg" alt="Alice Snuffalupagus">
           </div>
 
-          <div class="grid-item">
+          <div class="grid-item" data-muppettype="monster" data-showtype="sesameStreet">
             <img src="images/muppetImages/alistairCookie.png" class="muppetImg" alt="Alistair Cookie">
           </div>
+        </div>
 
     </section>
 
 <!-- SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-    <script src="js/app2.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/output.json"></script>
+    <script src="js/index.js" type="text/javascript"></script>
 
   </body>
 </html>

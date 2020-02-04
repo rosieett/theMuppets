@@ -1,18 +1,3 @@
-//doc ready
-
-//each muppet should have a class that says which type and appeared on
-var sesameStreet = '#sesameStreet';
-
-//upon click of button: Animal
-
-//jquery finds muppet grid-item that has Animal
-
-//jquery shows that muppet in grid area
-
-
-
-
-
 
 // //document ready
 // $(document).ready(function() {
