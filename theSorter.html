@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>The Muppet Sorter</title>
+
+    <link rel="stylesheet"href="css/normalize.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+
+
+  </head>
+
+  <body>
+
+    <header class="topHeader">
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link active" href="homepage.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="theSorter.html">The Sorter</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="infographics">Infographics</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about">About</a>
+        </li>
+      </ul>
+    </header>
+
+
+<!-- THE SORTING PAGE -->
+    <main>
+
+      <div class="intro">
+        <h1>The Muppet Sorter</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+      </div>
+
+
+
+        <!-- SORTING AREA -->
+
+      <nav class="filter">
+        <div class="buttonGroup" id="reset">
+          <a href="#" class="button">RESET</a>
+        </div>
+
+        <div class="buttonGroup" id="muppetType">
+          <h2 class="button label">Type of Muppet:</h2>
+          <a href="#" class="button is-clicked" id="animal">Animal</a>
+          <a href="#" class="button" id="people">People</a>
+          <a href="#" class="button" id="monster">Monster</a>
+        </div>
+
+        <div class="buttonGroup" id="showType">
+          <h2 class="label">Appeared On:</h2>
+          <a href="#" class="button" id="sesameStreet">Sesame Street</a>
+          <a href="#" class="button" id="theMuppetShow">The Muppet Show</a>
+        </div>
+      </nav>
+
+      <section class="sortingArea">
+        <div class="grid">
+
+        <!-- STRUCTURE FOR JS FILE NAMING -->
+        <!-- <div class="grid-item" data-muppettype="people" data-showtype="sesameStreet">
+            <img src="images/muppetImages/abbyCadabby.png" class="muppetImg" alt="Abby Cadabby">
+          </div> -->
+
+        </div>
+      </section>
+
+  </main>
+
+
+
+
+
+
+<!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="js/output.json"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+
+  </body>
+</html>
