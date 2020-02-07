@@ -81,39 +81,21 @@ $(document).ready(function() {
   // --------ISOTOPE FILTERING STYLES--------
 
     // init Isotope
-    $('.grid').isotope({
-      // options
+    var $grid = $('.grid').isotope({
       itemSelector: '.grid-item',
       layoutMode: 'fitRows'
     });
 
-    // init Isotope
-    var $grid = $('.grid').isotope({
-      // options
-    });
-
     // filter items on button click
     $('.button').click(function() {
-      var filterValue = $(this).attr('muppetData');
-      $grid.isotope({ filter: filterValue });
+      $grid.isotope();
     });
 
     //---- Combination filters --------
 
+
     // store filter for each group
       var filters = {};
-
-      $demo.click(function() {
-        var $this = $(this);
-        // get group key
-        var $buttonGroup = $this.parents('.button-group');
-        var filterGroup = $buttonGroup.attr('data-filter-group');
-        // set filter for group
-        filters[ filterGroup ] = $this.attr('data-filter');
-        // combine filters
-        var filterValue = concatValues( filters );
-        $grid.isotope({ filter: filterValue });
-      });
 
       // flatten object by concatting values
       function concatValues( obj ) {
@@ -124,12 +106,22 @@ $(document).ready(function() {
         return value;
       }
 
-
 });
 
 
 //Overall Function
 function muppetFilter (){
+
+  //target buttons remove class
+  $('.button').removeClass('is-clicked');
+
+  //because of ShowType variable, this targets and adds the is-clicked class to any ids within showType
+  $("#" + showType).addClass('is-clicked');
+
+  //for the other variables
+  $("#" + muppetType).addClass('is-clicked');
+
+
   //hide everyone
   $('.grid-item').hide();
 
