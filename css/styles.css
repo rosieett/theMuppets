@@ -1,16 +1,36 @@
 body{
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   margin: 0 auto;
-  background-color: #f1f1f1;
-}
-
-/* HOMEPAGE */
-
-.homepage{
-  background-image: url("other/homepageimage.png");
+  background-color: #fff;
 }
 
 /* HEADER */
+
+.heroText{
+  text-align: center;
+  margin: 50px;
+}
+
+.heroImg img{
+  background-position: center;
+  max-width: 100%;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 48px;
+  padding: 20px;
+  text-transform: uppercase;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 22px;
+  text-transform: uppercase;
+  font-family: 'Nunito', sans-serif;
+}
+
 
 .topHeader {
     background: #005829;
@@ -29,11 +49,6 @@ body{
   color: white;
 }
 
-main img{
-  width: 100%;
-}
-/* PAGE INFO  */
-
 .intro h1{
   font-size: 48px;
   text-align: center;
@@ -50,6 +65,10 @@ main img{
 }
 
 /* THE SORTER */
+
+.theSorter{
+  background-color: #f1f1f1;
+}
 
 .sortingArea{
   max-width: 1300px;
@@ -75,7 +94,6 @@ main img{
   border: 1px solid #CCC;
   border-radius: 3px;
   font-size: 16px;
-  text-decoration: none;
   color: #222;
 }
 
@@ -87,6 +105,12 @@ main img{
   background-color: #318e5a;
   color: white;
 }
+
+.button a:hover{
+  text-decoration: none;
+}
+
+
 
 
 .label{
@@ -120,4 +144,8 @@ main img{
   width: 50px;
   height: 50px;
   margin: 35px 25px 25px 25px;
+}
+
+.dropdown{
+  display: inline-block;
 }
