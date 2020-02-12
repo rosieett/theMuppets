@@ -15,7 +15,7 @@ body{
 
 .heroImg img{
   background-position: center;
-  max-width: 100%;
+  width: 100%;
   justify-content: center;
 }
 
@@ -37,15 +37,12 @@ h3 {
   margin: 30px;
 }
 
-.btn{
+.btn-primary, .btn-primary:hover, .btn-primary:not(:disabled):not(.disabled):active{
   background-color: #318e5a;
   border-color: #318e5a;
 }
 
-.active{
-  background-color: #318e5a;
-  border-color: #318e5a;
-}
+
 
 /* -------------------------------------------------- */
 /* SORTER */
@@ -128,6 +125,7 @@ h2{
 .filter{
   display: inline-block;
   width: 100%;
+  background-color: #f1f1f1;
 }
 
 .muppetImg{
@@ -158,10 +156,11 @@ h2{
 }
 
 .infographicsArea {
-  max-width: 1600px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 .infographics img{
   width: 100%;
   filter: drop-shadow(1px 1px 15px #eee);
+  margin: 10px;
 }
