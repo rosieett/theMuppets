@@ -147,6 +147,10 @@ h2{
   display: inline-block;
 }
 
+.dropdown-item.active, .dropdown-item:active{
+  background-color: #318e5a;
+}
+
 .sortingArea{
   max-width: 1500px;
   margin: 0 auto;
