@@ -23,12 +23,13 @@ $(document).ready(function() {
     var newItem = '<div class="grid-item" data-muppettype="';
     newItem = newItem + value.category + '" ' + ' data-performer="' + value.originalVoice.replace(/[^0-9A-Za-z]/gi, '') + '" ' + 'data-showtype="' + value.show + '">';
     newItem = newItem + '<img src="images/muppetImages/' + value.filename + '.png" class="muppetImg" alt="' + value.muppet + '">';
+    newItem = newItem + '<p>'+value.muppet+'</p>';
     newItem = newItem + '</div>';
 
-    //building a giant list of voices
-    if (voices.indexOf(value.originalVoice) == -1) {
-      voices.push(value.originalVoice);
-    }
+    // //building a giant list of voices
+    // if (voices.indexOf(value.originalVoice) == -1) {
+    //   voices.push(value.originalVoice);
+    // }
 
     // add in newItem (the structure of the filename for the muppet images) to the grid
     $('.grid').append(newItem);
@@ -55,8 +56,8 @@ $(document).ready(function() {
     //Get the Show - this lets you click on any button in this area and only need to write once
     showType = $(this).attr("id");
 
-    //output these values to console.
-    console.log("Showing muppets of type " + muppetType + " that appears on " + showType);
+    // //output these values to console.
+    // console.log("Showing muppets of type " + muppetType + " that appears on " + showType);
 
     muppetFilter();
   });
@@ -72,8 +73,8 @@ $(document).ready(function() {
     //Get the Show - this lets you click on any button in this area and only need to write once
     muppetType = $(this).attr("id");
 
-    //output these values to console.
-    console.log("Showing muppets of type " + muppetType + " that appears on " + showType);
+    // //output these values to console.
+    // console.log("Showing muppets of type " + muppetType + " that appears on " + showType);
 
     muppetFilter();
   });
@@ -90,8 +91,8 @@ $(document).ready(function() {
     //Get the Show - this lets you click on any button in this area and only need to write once
     performer = $(this).attr("id");
 
-    //output these values to console.
-    console.log("Showing muppets performed by " + performer);
+    // //output these values to console.
+    // console.log("Showing muppets performed by " + performer);
 
     muppetFilter();
   });
@@ -107,8 +108,8 @@ $(document).ready(function() {
     showType = "all";
     performer = "all";
 
-    //output these values to console.
-    console.log("Showing muppets of type " + muppetType + " that appears on " + showType);
+    // //output these values to console.
+    // console.log("Showing muppets of type " + muppetType + " that appears on " + showType);
 
     muppetFilter();
   });
@@ -180,5 +181,8 @@ function muppetFilter() {
       }
     }
   );
+
+
+
   $grid.isotope();
 };

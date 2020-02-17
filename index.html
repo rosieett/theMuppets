@@ -14,17 +14,19 @@
 
 <body>
 
-<!-- HEADER -->
+  <!-- HEADER -->
 
   <header>
     <section class="heroText">
       <h1>The Muppet Study</h1>
-      <h3>Muppet data visualized</h3>
-      <div class="heroButtons">
-        <a href="#theSorter" class="btn btn-primary btn-lg">The Sorter</a>
-        <a href="#infographics" class="btn btn-primary btn-lg">Infographics</a>
-        <a href="#about" class="btn btn-primary btn-lg">About</a>
-      </div>
+      <h2>An interactive study of Jim Henson’s muppets in both <span class="ital">Sesame Street</span> and <span class="ital">The Muppet Show.</span></h2>
+      <h4>Scroll down to begin or click on a button to jump to a specific section</h3>
+        <div class="heroButtons">
+          <a class="btn btn-primary" href="#introduction" role="button">Introduction</a>
+          <a class="btn btn-primary" href="#theSorter" role="button">The Sorter</a>
+          <a class="btn btn-primary" href="#introduction" role="button">Infographics</a>
+          <a class="btn btn-primary" href="#introduction" role="button">About</a>
+        </div>
     </section>
   </header>
 
@@ -34,51 +36,164 @@
     </div>
   </div>
 
-<!-- THE SORTING PAGE -->
+  <!-- INTRODUCTION -->
 
-  <main class="theSorter">
+  <div class="maindiv  grayBg">
 
-    <div class="intro"><a name="theSorter"></a>
-      <h2>The Muppet Sorter</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis auteirure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-    </div>
+    <div class="container"><a name="introduction">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="studyIntro">
+              <h3>Introduction</h3>
+              <p class="body">I watched a lot of Sesame Street and The Muppet Show growing up. My dad was anti-Disney--especially the princesses and their special brand of prescribed gender-normativity. As a result, the visitors and residents of
+                Sesame Street and performers on The Muppet Show aided in my learning, laughing, and entertainment (not to mention, they’re absolutely responsible for my love of bad jokes and puns). </p>
 
-<!-- SORTING AREA -->
+              <p class="body">Over the years, my adoration for Jim Henson has never faded; because of that admiration, I decided to research the creators, characters, and performers in Henson’s universe for my final project at The General Assembly’s
+                Front End Web Development Course in 2019/2020. This sorter is the result of my study.</p>
 
-    <nav class="filter sticky-top">
-      <div class="buttonGroup" id="reset">
-        <a href="#" class="button" data-tippy-content="Tooltip">RESET</a>
-      </div>
+              <p class="body">As I began my research, I asked myself: How many of these were in Sesame Street or the Muppet Show? Were there any characters that overlapped, either on TV or in films? How many characters are monsters, how many are
+                animals, and how many are people?</p>
 
-<!-- SORTING FILTERS -->
+              <p class="body">I knew Jim Henson and team created a lot of unique muppets; but, as I researched more, I found there are over 364 muppet characters just between the two main shows--Sesame Street and the Muppet Show--as well as the 11
+                movies that I’ve seen. As of right now, however, there are only 150 muppets in the sorter, mostly due to access to data--but that number will continue to grow as more data becomes available.</p>
 
-      <div class="buttonGroup" id="muppetType">
-        <h2 class="button label">Type of Muppet:</h2>
-        <a href="#" class="button" id="animal">Animal</a>
-        <a href="#" class="button" id="people">People</a>
-        <a href="#" class="button" id="monster">Monster</a>
-      </div>
+              <p class="body bold">The Muppet Sorter filters by muppet category and show, both described below:</p>
 
-      <div class="buttonGroup" id="showType">
-        <h2 class="label">Appeared On:</h2>
-        <a href="#" class="button" id="sesameStreet">Sesame Street</a>
-        <a href="#" class="button" id="theMuppetShow">The Muppet Show</a>
-      </div>
-
-      <div class="buttonGroup" id="performer">
-        <h2 class="label" >Performed by:</h2>
-        <div class="dropdown">
-          <button id="dLabel" type="button" class="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Performers
-          </button>
-          <div class="dropdown-menu" aria labelledby="dropdownMenuButton" id="performerNames">
-
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+    </div>
 
-<!-- SORTING GRID -->
+
+
+    <!-- Categories -->
+
+    <div class="container">
+
+      <div class="introText">
+        <h5>Muppet Categories:</h5>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="internalWrap">
+            <div class="row">
+              <div class="col-lg-6">
+                <img src="images/muppetImages/snuffy.png" alt="Snuffy">
+              </div>
+              <div class="col-lg-6 text align-self-center">
+                <h4 class="subhead">Animals</h4>
+                <p>Characters based from real animals (elephants, frogs, etc.)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="internalWrap">
+            <div class="row">
+              <div class="col-lg-6">
+                <img src="images/muppetImages/julia.png" alt="Julia">
+              </div>
+              <div class="col-lg-6 text align-self-center">
+                <h4 class="subhead">People</h4>
+                <p>Characters that vaguely resemble and embody human traits</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="internalWrap">
+            <div class="row">
+              <div class="col-lg-6">
+                <img src="images/muppetImages/beaker.png" alt="Beaker">
+              </div>
+              <div class="col-lg-6 text align-self-center">
+                <h4 class="subhead">Monsters</h4>
+                <p>Characters that are in fact, monsters, in their own perfect way.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Shows -->
+
+      <div class="introText">
+        <h5>Muppet Shows:</h5>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <img src="images/sesameStreetLogo.png" alt="Sesame Street Logo">
+            </div>
+            <div class="col-lg-6 align-self-center">
+              <h4 class="subhead">Sesame Street</h4>
+              <p>Muppet characters that have been featured on <span class="ital">Sesame Street.</span> Some may have been casted in earlier Jim Henson movies, but the sorter shows only their appearance on <span class="ital">Sesame Street.</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <img src="images/muppetShowLogo.png" alt="The Muppet Show Logo">
+            </div>
+            <div class="col-lg-6 align-self-center">
+              <h4 class="subhead">The Muppet Show</h4>
+              <p>Muppet characters that have been featured on <span class="ital">The Muppet Show.</span> They have been casted in movies as well, but the sorter shows only their appearance on <span class="ital">The Muppet Show.</span> </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- SORTING AREA -->
+
+  <main class="maindiv theSorter">
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-12"><a name="theSorter"></a>
+          <h3>The Muppet Sorter</h3>
+          <p>Using the buttons below, filter and sort through 150+ Muppets. You can sort through them by Muppet type and/or by show. <br>Use the reset button to reset the filters back to the full set of Muppets.</p>
+        </div>
+      </div>
+
+      <!-- SORTING FILTERS -->
+
+      <nav class="filter sticky-top">
+
+        <div class="buttonGroup" id="muppetType">
+          <h2 class="button label">Type of Muppet:</h2>
+          <a href="#" class="button" id="animal">Animal</a>
+          <a href="#" class="button" id="people">People</a>
+          <a href="#" class="button" id="monster">Monster</a>
+        </div>
+
+        <div class="buttonGroup" id="showType">
+          <h2 class="label">Appeared On:</h2>
+          <a href="#" class="button" id="sesameStreet">Sesame Street</a>
+          <a href="#" class="button" id="theMuppetShow">The Muppet Show</a>
+        </div>
+
+        <div class="buttonGroup" id="reset">
+          <a href="#" class="button" data-tippy-content="Tooltip">RESET</a>
+        </div>
+
+      </nav>
+    </div>
+
+    <!-- SORTING GRID -->
 
     <section class="sortingArea">
       <div class="grid">
@@ -87,33 +202,36 @@
 
   </main>
 
-<!-- INFOGRAPHICS  -->
-  <div class="infographics"><a name="infographics"></a>
-    <h2>Infographics</h2>
-    <div class="container infographicsArea">
-      <div class="row">
-        <div class="col-5">
-          <img src="other/Muppets_infographics/Muppets Infogfx-06.png" alt="infographic about puppeteers' muppet appearances">
-        </div>
-        <div class="col-7">
-          <img src="other/Muppets_infographics/Muppets Infogfx-07.png" alt="">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <img src="other/Muppets_infographics/Muppets Infogfx-03.png" alt="">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <img src="other/Muppets_infographics/Muppets Infogfx-05.png" alt="">
-        </div>
-      </div>
 
+
+  <!-- INFOGRAPHICS  -->
+  <div class="maindiv grayBg"><a name="infographics">
+
+      <div class="container">
+        <h3>Infographics</h3>
+        <div class="row">
+          <div class="col-5">
+            <img class="infoImg" src="other/Muppets_infographics/Muppets Infogfx-06.png" alt="infographic about puppeteers' muppet appearances">
+          </div>
+          <div class="col-7">
+            <img class="infoImg" src="other/Muppets_infographics/Muppets Infogfx-07.png" alt="">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <img class="infoImg" src="other/Muppets_infographics/Muppets Infogfx-03.png" alt="">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <img class="infoImg" src="other/Muppets_infographics/Muppets Infogfx-05.png" alt="">
+          </div>
+        </div>
+
+      </div>
   </div>
-
-
-
 
 
 
