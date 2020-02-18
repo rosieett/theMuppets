@@ -9,8 +9,7 @@ body{
 
 .heroText{
   text-align: center;
-  margin: 50px 0 -50px 0;
-
+  margin: 40px 0 -30px 0;
 }
 
 .heroImg img{
@@ -20,17 +19,17 @@ body{
 }
 
 h1 {
-  font-size: 48px;
-  padding: 20px;
+  font-size: 64px;
+  padding: 0 20px 10px 20px;
   text-transform: uppercase;
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
 }
 
 h2{
-  font-size: 28px;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 700;
+  font-size: 24px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
 }
 
 h3{
@@ -45,8 +44,8 @@ h3{
 
 h4 {
   font-size: 18px;
-  font-weight: 700;
-  padding-top: 20px;
+  font-weight: 500;
+  padding-top: 10px;
 }
 
 h5 {
@@ -72,7 +71,7 @@ h5 {
 
 .heroButtons{
   text-align: center;
-  margin: 30px;
+  margin: 20px 30px 10px 30px;
 }
 
 .btn-primary, .btn-primary:not(:disabled):not(.disabled):active{
@@ -121,6 +120,7 @@ h5 {
 
 .subhead{
   font-size: 18px;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
@@ -186,9 +186,15 @@ h5 {
   background-image: none;
   border: none;
   border-radius: none;
-  font-size: 16px;
+  font-size: 18px;
   color: #222;
   font-weight: 300;
+}
+
+.green{
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #318e5a;
 }
 
 .filter{
@@ -207,7 +213,7 @@ h5 {
 
 .grid-item {
   max-width: 100%;
-  height: 150px;
+  height: 130px;
 }
 
 .grid-item img{
@@ -248,5 +254,30 @@ h5 {
 .infoImg{
   width: 100%;
   filter: drop-shadow(1px 1px 15px #eee);
+  padding-bottom: 20px;
+}
+
+.about{
+  margin-top: 30px;
+}
+
+.about h5{
   padding-bottom: 10px;
+}
+
+.about p{
+  font-size: 12px;
+}
+
+footer {
+  width: 100%;
+  background-color:  #318e5a;
+  height: 50px;
+  margin-top: 20px;
+}
+
+.headertop{
+    width: 100%;
+    background-color:  #318e5a;
+    height: 10px;
 }
