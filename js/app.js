@@ -13,8 +13,8 @@ var $grid;
 $(document).ready(function() {
 
   //create an array for dropdown menu performer options
-  var voices = Array();
-  var voiceIds = Array();
+  // var voices = Array();
+  // var voiceIds = Array();
 
   //SHOWING MUPPETS IN THE GRID without imgs being in the html
   $(muppetData).each(function(key, value) {
@@ -37,12 +37,12 @@ $(document).ready(function() {
   });
 
 
-  voices.sort();
-  //auto-adding in id per performer so I dont need a list of dropdown in the html for each
-  $(voices).each(function(key, value) {
-    var newItem = "<a class='dropdown-item' href='#' id='" + value.replace(/[^0-9A-Za-z]/gi, '') + "'>" + value + "</a>";
-    $('#performerNames').append(newItem);
-  });
+  // voices.sort();
+  // //auto-adding in id per performer so I dont need a list of dropdown in the html for each
+  // $(voices).each(function(key, value) {
+  //   var newItem = "<a class='dropdown-item' href='#' id='" + value.replace(/[^0-9A-Za-z]/gi, '') + "'>" + value + "</a>";
+  //   $('#performerNames').append(newItem);
+  // });
 
 
   //---ShowType---
@@ -82,20 +82,20 @@ $(document).ready(function() {
   //---performer---
 
   //When I click on the select this voice from the dropdown
-  $('.dropdown-item').click(function(e) {
-    // do something…
-
-    //prevent the submit button from refreshing the page
-    e.preventDefault();
-
-    //Get the Show - this lets you click on any button in this area and only need to write once
-    performer = $(this).attr("id");
-
-    // //output these values to console.
-    // console.log("Showing muppets performed by " + performer);
-
-    muppetFilter();
-  });
+  // $('.dropdown-item').click(function(e) {
+  //   // do something…
+  //
+  //   //prevent the submit button from refreshing the page
+  //   e.preventDefault();
+  //
+  //   //Get the Show - this lets you click on any button in this area and only need to write once
+  //   performer = $(this).attr("id");
+  //
+  //   // //output these values to console.
+  //   // console.log("Showing muppets performed by " + performer);
+  //
+  //   muppetFilter();
+  // });
 
   //When I click on the filter buttons, run this function
   $('#reset .button').click(function(e) {
@@ -139,6 +139,7 @@ $(document).ready(function() {
   }
 
 });
+
 
 
 //Overall Function
