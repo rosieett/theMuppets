@@ -12,37 +12,22 @@ var $grid;
 //When the page is loaded, run the javascript
 $(document).ready(function() {
 
-  //create an array for dropdown menu performer options
-  // var voices = Array();
-  // var voiceIds = Array();
 
   //SHOWING MUPPETS IN THE GRID without imgs being in the html
   $(muppetData).each(function(key, value) {
 
     //jquery append - inserts inside the target
     var newItem = '<div class="grid-item" data-muppettype="';
-    newItem = newItem + value.category + '" ' + ' data-performer="' + value.originalVoice.replace(/[^0-9A-Za-z]/gi, '') + '" ' + 'data-showtype="' + value.show + '">';
+    newItem = newItem + value.category + '" ' + ' data-performer="' + value.originalVoice.replace(/[^0-9A-Za-z]/gi, '') + '" ' + 'data-showtype="' + value.show + '"' + ' data-both="' + value.both + '">';
     newItem = newItem + '<img src="images/muppetImages/' + value.filename + '.png" class="muppetImg" alt="' + value.muppet + '">';
     newItem = newItem + '<p>'+value.muppet+'</p>';
     newItem = newItem + '</div>';
 
-    // //building a giant list of voices
-    // if (voices.indexOf(value.originalVoice) == -1) {
-    //   voices.push(value.originalVoice);
-    // }
-
+ ' data-both=" +value.both+ "'
     // add in newItem (the structure of the filename for the muppet images) to the grid
     $('.grid').append(newItem);
 
   });
-
-
-  // voices.sort();
-  // //auto-adding in id per performer so I dont need a list of dropdown in the html for each
-  // $(voices).each(function(key, value) {
-  //   var newItem = "<a class='dropdown-item' href='#' id='" + value.replace(/[^0-9A-Za-z]/gi, '') + "'>" + value + "</a>";
-  //   $('#performerNames').append(newItem);
-  // });
 
 
   //---ShowType---
@@ -79,23 +64,7 @@ $(document).ready(function() {
     muppetFilter();
   });
 
-  //---performer---
 
-  //When I click on the select this voice from the dropdown
-  // $('.dropdown-item').click(function(e) {
-  //   // do something…
-  //
-  //   //prevent the submit button from refreshing the page
-  //   e.preventDefault();
-  //
-  //   //Get the Show - this lets you click on any button in this area and only need to write once
-  //   performer = $(this).attr("id");
-  //
-  //   // //output these values to console.
-  //   // console.log("Showing muppets performed by " + performer);
-  //
-  //   muppetFilter();
-  // });
 
   //When I click on the filter buttons, run this function
   $('#reset .button').click(function(e) {
@@ -155,6 +124,7 @@ function muppetFilter() {
   $("#" + muppetType).addClass('is-clicked');
 
 
+
   //hide everyone
   $('.grid-item').hide();
 
@@ -168,9 +138,8 @@ function muppetFilter() {
 
       var itemShowType = $(this).data("showtype");
       var itemMuppetType = $(this).data("muppettype");
-      var itemPerformer = $(this).data("performer")
-      console.log(itemPerformer);
-      console.log(performer);
+      var itemPerformer = $(this).data("performer");
+
       if (itemShowType == showType || showType == "all") {
         // The show matches
         if (itemMuppetType == muppetType || muppetType == "all") {
