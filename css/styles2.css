@@ -243,6 +243,16 @@ h5 {
   padding-bottom: 100px;
 }
 
+.summary{
+  background-color: gray;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.summaryImg{
+  width: 100%;
+}
+
 /* -------------------------------------------------- */
 /* INFOGRAPHICS */
 /* -------------------------------------------------- */
