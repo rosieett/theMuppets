@@ -72,8 +72,6 @@ $(document).ready(function() {
     //Get the Show - this lets you click on any button in this area and only need to write once
     muppetType = "all";
     showType = "all";
-    performer = "all";
-    bothType = "all";
 
     // //output these values to console.
     // console.log("Showing muppets of type " + muppetType + " that appears on " + showType);
@@ -85,27 +83,27 @@ $(document).ready(function() {
   // --------ISOTOPE FILTERING STYLES--------
 
   // init Isotope
-  $grid = $('.grid').isotope({
-    itemSelector: '.grid-item',
-    layoutMode: 'fitRows'
-  });
+  // $grid = $('.grid').isotope({
+  //   itemSelector: '.grid-item',
+  //   layoutMode: 'fitRows'
+  // });
 
   //---- Combination filters --------
 
 
   // store filter for each group
-  var filters = {};
-
-  // flatten object by concatting values
-  function concatValues(obj) {
-    var value = '';
-    for (var prop in obj) {
-      value += obj[prop];
-    }
-    return value;
-  }
-
-});
+//   var filters = {};
+//
+//   // flatten object by concatting values
+//   function concatValues(obj) {
+//     var value = '';
+//     for (var prop in obj) {
+//       value += obj[prop];
+//     }
+//     return value;
+//   }
+//
+// });
 
 
 
@@ -148,5 +146,5 @@ function muppetFilter() {
         }
   );
 
-  $grid.isotope();
+  // $grid.isotope();
 };
