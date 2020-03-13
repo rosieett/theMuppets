@@ -1,8 +1,6 @@
 // Set the default variables for what's being shown
 var showType = "all";
 var muppetType = "all";
-var performer = "all";
-var bothType = "all";
 var $grid;
 
 //-------------------------------------------------------------//
@@ -66,24 +64,6 @@ $(document).ready(function() {
 
 
   //When I click on the filter buttons, run this function
-  $('#bothType .button').click(function(e) {
-
-    //prevent the submit button from refreshing the page
-    e.preventDefault();
-
-    //Get the Show - this lets you click on any button in this area and only need to write once
-    bothType = $(this).attr("id");
-
-    // //output these values to console.
-    // console.log("Showing muppets of type " + muppetType + " that appears on " + showType);
-
-    muppetFilter();
-  });
-
-
-
-
-  //When I click on the filter buttons, run this function
   $('#reset .button').click(function(e) {
 
     //prevent the submit button from refreshing the page
@@ -141,9 +121,6 @@ function muppetFilter() {
   //for the other variables
   $("#" + muppetType).addClass('is-clicked');
 
-  $("#" + bothType).addClass('is-clicked');
-
-
 
   //hide everyone
   $('.grid-item').hide();
@@ -158,30 +135,18 @@ function muppetFilter() {
 
       var itemShowType = $(this).data("showtype");
       var itemMuppetType = $(this).data("muppettype");
-      var itemPerformer = $(this).data("performer");
-      var itemBothType = $(this).data("bothTypeBut")
 
       // The show matches
       if (itemShowType == showType || showType == "all") {
 
-        // The both matches
-        if (itemBothType == bothType || bothType == "both") {
-
-console.log("this button show" + bothType);
-
         //The type matches
         if (itemMuppetType == muppetType || muppetType == "all") {
           //the performer matches
-          if (itemPerformer == performer || performer == "all") {
             jQuery(this).show();
           }
           }
         }
-      }
-    }
   );
-
-
 
   $grid.isotope();
 };
