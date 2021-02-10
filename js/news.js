@@ -22,7 +22,7 @@ const muppetsNewYorkTimes = async () => {
   for (let i = 0; i < muppetInfo.length; i++) {
     let obj = muppetInfo[i];
     let col = document.createElement('div');
-        col.className = "col-md-4 col-xs-12 mb-4";
+        col.className = "col-md-4 col-sm-12 mb-4";
     let card = document.createElement('div');
         card.className = "card";
         card.style = "width: 18rem;";
