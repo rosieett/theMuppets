@@ -25,7 +25,6 @@ const muppetsNewYorkTimes = async () => {
         col.className = "col-md-4 col-sm-12 mb-4";
     let card = document.createElement('div');
         card.className = "card";
-        card.style = "width: 18rem;";
     let cardBody = document.createElement('div');
         cardBody.className = "card-body";
     let imgLink = `http://www.nytimes.com/` + obj.multimedia[0].url;
