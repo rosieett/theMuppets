@@ -2,7 +2,6 @@ import { nyTimesKey } from "./keys.js";
 
 const muppetsNewYorkTimes = async () => {
 
-  //Retrieve information from the URl
   const muppetsNytimesUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=(’muppets’)&begin_date=20200101&api-key=2cgcwOVTzV8ysIeRYSecL4dSRdAwI9Rd';
   // create a variable to go get my url and store it
   const muppetResponse = await fetch(muppetsNytimesUrl);
