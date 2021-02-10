@@ -1,2 +1,2 @@
 
-const nyTimesKey = '2cgcwOVTzV8ysIeRYSecL4dSRdAwI9Rd';
+export const nyTimesKey = '2cgcwOVTzV8ysIeRYSecL4dSRdAwI9Rd';
