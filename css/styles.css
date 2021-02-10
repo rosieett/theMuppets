@@ -329,3 +329,13 @@ footer{
 .center{
   text-align: center;
 }
+
+.white{
+  color: white;
+  text-align: center;
+  padding: 10px
+}
+
+.white:hover{
+  color: white;
+}
