@@ -8,9 +8,10 @@ const muppetsNewYorkTimes = async () => {
   // if it's not ok, let's get out of here
   if (!muppetResponse.ok) {
     throw new Error('failed to retrieve muppets from nytimes');
-  } else if (!sesameResponse.ok) {
-    throw new Error('failed to retrieve sesamest from nytimes');
   }
+  // else if (!sesameResponse.ok) {
+  //   throw new Error('failed to retrieve sesamest from nytimes');
+  // }
 
   // transform response into JSON
   const jsonMuppetsNyt = await muppetResponse.json();
