@@ -1,93 +1,124 @@
-/*
-  Please add all Javascript code to this file.
-*/
+
 
 
 
 //create function to retrieve info from NYTimes
-const retrieveTitles = async () => {
+// const muppetsNewYorkTimes = async () => {
+//
+//   //Retrieve information from the URl
+//   const muppetsNytimesUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=(’muppets’)&begin_date=20200101&api-key=2cgcwOVTzV8ysIeRYSecL4dSRdAwI9Rd';
+//   // create a variable to go get my url and store it
+//   const muppetResponse = await fetch(muppetsNytimesUrl);
+//   // if it's not ok, let's get out of here
+//   if (!muppetResponse.ok) {
+//     throw new Error('failed to retrieve muppets from nytimes');
+//   } else if (!sesameResponse.ok) {
+//     throw new Error('failed to retrieve sesamest from nytimes');
+//   }
+//
+//   // transform response into JSON
+//   const jsonMuppetsNyt = await muppetResponse.json();
+//   let muppetInfo = jsonMuppetsNyt.response.docs;
+//
+//   let rowContainer = document.querySelector(".row");
+//
+//   for (let i = 0; i < muppetInfo.length; i++) {
+//     let obj = muppetInfo[i];
+//     let col = document.createElement('div');
+//         col.className = "col-4 mb-4";
+//     let card = document.createElement('div');
+//         card.className = "card";
+//         card.style = "width: 18rem;";
+//     let cardBody = document.createElement('div');
+//         cardBody.className = "card-body";
+//     let imgLink = `http://www.nytimes.com/` + obj.multimedia[0].url;
+//     let embed = document.createElement('div');
+//         embed.className = "embed-responsive embed-responsive-4by3 card-image-top";
+//     let embedR = document.createElement('div');
+//         embedR.className = "embed-responsive-item articleImage"
+//         embedR.style.backgroundImage = "url('" + imgLink + "')";
+//     let title = document.createTextNode(obj.headline.main);
+//     let h6 = document.createElement('h6');
+//         h6.className = "card-title";
+//     let anchor = document.createElement("a");
+//         anchor.className = "btn btn-primary";
+//         anchor.target = "_blank";
+//         anchor.innerText = "Go to Article"
+//         anchor.href = obj.web_url;
+//
+//
+//   	h6.appendChild(title);
+//     cardBody.appendChild(h6);
+//     cardBody.appendChild(anchor);
+//     card.appendChild(embed);
+//     embed.appendChild(embedR);
+//     card.appendChild(cardBody);
+//     col.appendChild(card)
+//   	rowContainer.appendChild(col);
+//   }
+// }
 
-  /*
-  NYTIMES
-  */
+import { guardianKey, newsApiKey, nytimesKey } from "./keys.js";
 
-  //Retrieve information from the URl
-  const muppetsNytimesUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=(’muppets’)&begin_date=20200101&api-key=2cgcwOVTzV8ysIeRYSecL4dSRdAwI9Rd';
-  const sesamestNytimesUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=(’sesame street’)&begin_date=20200101&api-key=2cgcwOVTzV8ysIeRYSecL4dSRdAwI9Rd';
+const sesamestNewYorkTimes = async () => {
 
-  // create a variable to go get my url and store it
-  const muppetResponse = await fetch(muppetsNytimesUrl);
+  const sesamestNytimesUrl = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=(’sesame street’)&begin_date=20200101&pub_date&api-key=${nyTimesKey}`;
   const sesameResponse = await fetch(sesamestNytimesUrl);
 
-      // if it's not ok, let's get out of here
-      if (!muppetResponse.ok) {
-        throw new Error('failed to retrieve muppets from nytimes');
-      } else if (!sesameResponse.ok) {
-        throw new Error ('failed to retrieve sesamest from nytimes');
-      }
-
   // transform response into JSON
-  const jsonMuppetsNyt = await muppetResponse.json();
-  const jsonSesameNyt = await sesameResponse.json();
+  const jsonSesameStNyt = await sesameResponse.json();
+  let sesameStInfo = jsonSesameStNyt.response.docs;
 
+  let rowContainer = document.querySelector(".row");
 
-  //create a variable that stores the first title
-  var muppetNytTitle = jsonMuppetsNyt.response.docs;
-  var sesameNytTitle = jsonSesameNyt.response.docs;
+  for (let i = 0; i < sesameStInfo.length; i++) {
+    let obj = sesameStInfo[i];
+    let col = document.createElement('div');
+        col.className = "col-4 mb-4";
+    let card = document.createElement('div');
+        card.className = "card";
+        card.style = "width: 18rem;";
+    let cardBody = document.createElement('div');
+        cardBody.className = "card-body";
+    let imgLink = `http://www.nytimes.com/` + obj.multimedia[0].url;
+    let embed = document.createElement('div');
+        embed.className = "embed-responsive embed-responsive-4by3 card-image-top";
+    let embedR = document.createElement('div');
+        embedR.className = "embed-responsive-item articleImage"
+        embedR.style.backgroundImage = "url('" + imgLink + "')";
+    let title = document.createTextNode(obj.headline.main);
+    let h6 = document.createElement('h6');
+        h6.className = "card-title";
+    let anchor = document.createElement("a");
+        anchor.className = "btn btn-primary";
+        anchor.target = "_blank";
+        anchor.innerText = "Go to Article"
+        anchor.href = obj.web_url;
+    let summary = document.createTextNode(obj.abstract);
+    let abstract = document.createElement('p');
+        abstract.className = "card-text";
+    let pubDate = obj.pub_date;
+        pubDate = pubDate.slice(0,10);
+    let pubDateBetter = document.createTextNode(pubDate);
+    let published = document.createElement('p');
+        published.className = "card-text about mb-0 mt-0";
 
-
-  //muppet title loop
-  for(var i = 0; i < muppetNytTitle.length; i++) {
-    var obj = muppetNytTitle[i];
-    var muppetsOnNytimes = obj.headline.main;
-    console.log(muppetsOnNytimes)
+  	h6.appendChild(title);
+    published.appendChild(pubDateBetter);
+    cardBody.appendChild(published);
+    abstract.appendChild(summary);
+    cardBody.appendChild(h6);
+    cardBody.appendChild(abstract);
+    cardBody.appendChild(anchor);
+    card.appendChild(embed);
+    embed.appendChild(embedR);
+    card.appendChild(cardBody);
+    col.appendChild(card)
+  	rowContainer.appendChild(col);
   }
-
-  //sesame title loop
-  for(var i = 0; i < sesameNytTitle.length; i++) {
-    var obj = sesameNytTitle[i];
-    var sesamestOnNytimes = obj.headline.main;
-  }
-
-  //create a variable that stores the image that goes with it
-  const muppetNytImage = jsonMuppetsNyt.response.docs;
-  for(var i = 0; i < muppetNytImage.length; i++) {
-    var obj = muppetNytImage[i];
-    var muppetsImageOnNytimes = obj.multimedia[0].url
-    muppetsImageOnNytimes = 'http://www.nytimes.com/'+ muppetsImageOnNytimes
-  }
-
-  //create a variable that stores the image that goes with it
-  const sesameNytImage = jsonSesameNyt.response.docs;
-  for(var i = 0; i < jsonSesameNyt.length; i++) {
-    var obj = jsonSesameNyt[i];
-    var sesameImageOnNytimes = obj.multimedia[0].url
-    sesameImageOnNytimes = 'http://www.nytimes.com/'+ sesameImageOnNytimes;
-  }
-
-  //h5 to become muppetNytTitle
-  document.getElementById('card1').querySelector("h5").innerHTML = muppetsOnNytimes;
-  document.getElementById('card2').querySelector("h5").innerHTML = muppetsOnNytimes;
-  document.getElementById('card3').querySelector("h5").innerHTML = muppetsOnNytimes;
-
-  //class="card-img-top" to become muppetNytImage
-  document.querySelector('img').src = muppetsImageOnNytimes;
+}
 
 
-  //when you click on it, it opens the popup
-  // document.getElementsByTagName("h3")[0].addEventListener('click', function (event) {
-  //   document.getElementById('popUp').querySelector('h1').innerHTML = nytListTitle;
-  //   document.getElementById('popUp').querySelector('p').innerHTML = nytAbstract;
-  //   document.getElementById("popUp").querySelectorAll('a')[1].href = nytLink;
-  // })
-
-  //replace the category
-  // document.getElementsByTagName("h6")[0].innerHTML = nytCategory;
-
-
-
-
-};
 
 
 // DOM is ready for manipulation
@@ -98,7 +129,8 @@ const onLoadHandler = () => {
   } catch (err) {
     console.log("yeah this isn't working...")
   }
-  retrieveTitles();
+  // muppetsNewYorkTimes();
+  sesamestNewYorkTimes();
 
 };
 

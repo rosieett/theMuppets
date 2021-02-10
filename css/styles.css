@@ -55,13 +55,20 @@ h5 {
   margin: 0px;
 }
 
+h6 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0px;
+}
+
+
 .uppercase{
   text-transform: uppercase;
 }
 
 .maindiv{
   width: 100%;
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
 }
 
 .studyIntro {
@@ -79,14 +86,15 @@ h5 {
 }
 
 .btn-primary, .btn-primary:not(:disabled):not(.disabled):active{
-  background-color: #318e5a;
-  border-color: #318e5a;
+  background-color: #318e5a !important;
+  border-color: #318e5a !important;
 }
 
 .btn-primary:hover{
-  background-color: #2b7a50;
-  border-color: #2b7a50;
+  background-color: #2b7a50 !important;
+  border-color: #2b7a50 !important;
 }
+
 
 
 
@@ -298,4 +306,26 @@ footer{
 
 .bg-green{
   background-color: #318e5a;
+}
+
+.articleImage{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.btn .whiteText{
+  color: white;
+}
+
+.page-link:hover{
+  color: #318e5a;
+}
+
+.greenSmall{
+  color: #222;
+}
+
+.center{
+  text-align: center;
 }
