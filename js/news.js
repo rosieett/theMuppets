@@ -58,7 +58,7 @@
 //   }
 // }
 
-import { nytimesKey } from "./keys.js";
+import { nyTimesKey } from "./keys.js";
 
 const sesamestNewYorkTimes = async () => {
 
