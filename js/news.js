@@ -1,6 +1,5 @@
 import { nyTimesKey } from "./keys.js";
 
-create function to retrieve info from NYTimes
 const muppetsNewYorkTimes = async () => {
 
   //Retrieve information from the URl
