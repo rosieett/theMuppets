@@ -42,16 +42,27 @@ const muppetsNewYorkTimes = async () => {
         anchor.target = "_blank";
         anchor.innerText = "Go to Article"
         anchor.href = obj.web_url;
+    let summary = document.createTextNode(obj.abstract);
+    let abstract = document.createElement('p');
+        abstract.className = "card-text";
+    let pubDate = obj.pub_date;
+        pubDate = pubDate.slice(0,10);
+    let pubDateBetter = document.createTextNode(pubDate);
+    let published = document.createElement('p');
+        published.className = "card-text about mb-0 mt-0";
 
-
-  	h6.appendChild(title);
-    cardBody.appendChild(h6);
-    cardBody.appendChild(anchor);
-    card.appendChild(embed);
-    embed.appendChild(embedR);
-    card.appendChild(cardBody);
-    col.appendChild(card)
-  	rowContainer.appendChild(col);
+      	h6.appendChild(title);
+        published.appendChild(pubDateBetter);
+        cardBody.appendChild(published);
+        abstract.appendChild(summary);
+        cardBody.appendChild(h6);
+        cardBody.appendChild(abstract);
+        cardBody.appendChild(anchor);
+        card.appendChild(embed);
+        embed.appendChild(embedR);
+        card.appendChild(cardBody);
+        col.appendChild(card)
+      	rowContainer.appendChild(col);
   }
 }
 
