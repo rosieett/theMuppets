@@ -159,6 +159,13 @@ h6 {
   margin-left: 30px;
 }
 
+
+.news .buttonGroup{
+  display: inline-block;
+  margin-left: 0px;
+}
+
+
 .button{
   display: inline-block;
   padding: 5px 15px;
@@ -194,6 +201,18 @@ h6 {
 .label{
   display: inline-block;
   padding: 5px 15px;
+  background-color: #fff;
+  background-image: none;
+  border: none;
+  border-radius: none;
+  font-size: 18px;
+  color: #222;
+  font-weight: 300;
+}
+
+.news .label{
+  display: inline-block;
+  padding: 0px 15px 5px 15px;
   background-color: #fff;
   background-image: none;
   border: none;
@@ -240,10 +259,23 @@ h6 {
   line-height: 1.2;
 }
 
+.left{
+  text-align: left;
+}
+
 .news .grid-item {
 width: 30%;
 height: auto;
 margin-bottom: 30px;
+}
+
+.news .grid-item p{
+  font-size: 12px;
+  text-align: left !important;
+}
+
+.news .grid-item h6{
+  padding-top: 5px !important;
 }
 
 .dropdown{

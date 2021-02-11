@@ -1,11 +1,5 @@
-// Set the default variables for what's being shown
-var showType = "all";
-var muppetType = "all";
-var performer = "all";
-
-import {
-    nyTimesKey
-} from "./keys.js";
+import { nyTimesKey } from "./keys.js";
+// import { guardianKey } from "./keys.js";
 
 
 //-------------------------------------------------------------//
@@ -17,30 +11,40 @@ import {
 $(document).ready(async () => {
 
     // NYT API Data
-    const NYT_API_URL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20200101&api-key=2cgcwOVTzV8ysIeRYSecL4dSRdAwI9Rd';
-    const MUPPETS_API_URL = NYT_API_URL + '&q=(’muppets’)';
-    const SESAME_STREET_API_URL = NYT_API_URL + '&q=(’sesame street’)';
+    const NYT_API_URL = `https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20200101&api-key=${nyTimesKey}`;
+    const MUPPETS_NYT_API_URL = NYT_API_URL + '&q=(’muppets’)';
+    const SESAME_STREET_NYT_API_URL = NYT_API_URL + '&q=(’sesame street’)';
+
+    //Guard API data
+    // const GUARD_API_URL = `https://content.guardianapis.com/search?show-fields=thumbnail&q=muppets&api-key=${guardianKey}`;
+    // const MUPPETS_GUARD_API_URL = GUARD_API_URL + '&q=muppets';
+    // const SESAME_STREET_GUARD_API_URL = GUARD_API_URL + '&q=sesame%20street';
 
     // create a variable to go get my url and store it
-    const muppetResponse = await fetch(MUPPETS_API_URL);
-    const sesameStreetResponse = await fetch(SESAME_STREET_API_URL);
+    const muppetResponse = await fetch(MUPPETS_NYT_API_URL);
+    const sesameStreetResponse = await fetch(SESAME_STREET_NYT_API_URL);
+    // const muppetGuardResponse = await fetch(MUPPETS_GUARD_API_URL);
+    // const sesameStreetGuardResponse = await fetch(SESAME_STREET_GUARD_API_URL);
+    // console.log(muppetGuardResponse);
 
     // if it's not ok, let's get out of here
     if (!muppetResponse.ok || !sesameStreetResponse.ok) {
         throw new Error('failed to retrieve muppets from nytimes');
     }
+    //  else if (!muppetGuardResponse.ok || !sesameStreetGuardResponse.ok) {
+    //     throw new Error('failed to retrieve muppets from Guardian');
+    // }
 
     // transform response into JSON
     const muppetNytJson = await muppetResponse.json();
     const sesameStreetNytJson = await sesameStreetResponse.json();
+    // const muppetGuardJson = await muppetGuardResponse.json();
+    // const sesameStreetGuardJson = await sesameStreetGuardResponse.json();
 
     let muppetArticles = muppetNytJson.response.docs;
     let sesameStreetArticles = sesameStreetNytJson.response.docs;
-
-
-    // New data source
-
-
+    // let muppetGuardArticles = muppetGuardJson.response.results;
+    // let sesameStreetGuardArticles = sesameStreetGuardJson.response.results;
 
     // ---------------
 
@@ -53,7 +57,7 @@ $(document).ready(async () => {
             articleUrl: article.web_url,
             imgUrl: article.multimedia[0].url,
             category: 'muppets',
-            source: 'nytimes'
+            source: 'New York Times'
         };
 
         return obj;
@@ -68,19 +72,37 @@ $(document).ready(async () => {
             articleUrl: article.web_url,
             imgUrl: article.multimedia[0].url,
             category: 'sesame-street',
-            source: 'nytimes'
+            source: 'New York Times'
         };
 
         return obj;
     });
 
-    let allArticles = [].concat(muppetArticles, sesameStreetArticles);
+    // muppetGuardArticles = muppetGuardArticles.map(article => {
+    //
+    //     let obj = {
+    //         summary: article.pillarName,
+    //         publishDate: article.webPublicationDate,
+    //         title: article.webTitle,
+    //         articleUrl: article.webUrl,
+    //         imgUrl: article.fields['thumbnail'],
+    //         category: 'muppets',
+    //         source: 'The Guardian'
+    //     };
+    //
+    //     return obj;
+    // });
+
+
+
+    let allArticles = [].concat(muppetArticles, sesameStreetArticles, muppetGuardArticles);
+    console.log(allArticles);
 
     //SHOWING MUPPETS IN THE GRID without imgs being in the html
 
     let $grid = $('.grid');
 
-    console.log(allArticles);
+    // console.log(allArticles);
 
     allArticles.forEach((article, index) => {
 
@@ -110,7 +132,7 @@ $(document).ready(async () => {
 
         let $anchor = $('<a />');
         $anchor.text('Go to Article');
-        $anchor.addClass('btn btn-primary');
+        $anchor.addClass('btn btn-primary ');
         $anchor.attr('target', '_blank');
         $anchor.attr('href', article.articleUrl);
 
