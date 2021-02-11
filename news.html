@@ -26,7 +26,7 @@
 
 </head>
 
-<body>
+<body class="news">
 
   <!-- HEADER -->
 
@@ -52,15 +52,38 @@
     <div class="row">
       <div class="col-12">
         <h3>In the News</h3>
+      
         <p class="body"></p>
       </div>
     </div>
   </div>
 
 
-  <div class="container mt-5">
-    <div class="row">
-    </div>
+  <div class="container"><a name="theSorter"></a>
+
+
+
+    <!-- SORTING FILTERS -->
+
+    <nav class="filter">
+
+      <div class="buttonGroup" id="muppetType">
+        <h2 class="label green">Type of Muppet:</h2>
+
+        <a href="#" class="button" data-filter=".muppets">Muppets</a>
+        <a href="#" class="button" data-filter=".sesame-street">Sesame Street</a>
+                <a href="#" class="button" data-filter="*">Reset</a>
+
+      </div>
+
+    </nav>
+
+    <section class="sortingArea mt-2">
+      <div class="grid">
+      </div>
+    </section>
+
+
   </div>
 
   <nav aria-label="Page navigation example">
@@ -89,9 +112,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
   <script type="text/javascript" src="js/output.json"></script>
-  <script src="js/keys.js" type="module" ></script>
-  <script src="js/app.js" type="text/javascript"></script>
-  <script src="js/news.js" type="module" ></script>
+  <script src="js/keys.js" type="module"></script>
+  <!-- <script src="js/app.js" type="text/javascript"></script> -->
+  <script src="js/news.js" type="module"></script>
 
 </body>
 

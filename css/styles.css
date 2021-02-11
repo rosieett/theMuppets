@@ -240,6 +240,12 @@ h6 {
   line-height: 1.2;
 }
 
+.news .grid-item {
+width: 30%;
+height: auto;
+margin-bottom: 30px;
+}
+
 .dropdown{
   display: inline-block;
 }

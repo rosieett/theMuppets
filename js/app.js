@@ -2,7 +2,6 @@
 var showType = "all";
 var muppetType = "all";
 var performer = "all";
-var $grid;
 
 //-------------------------------------------------------------//
 //-------DOCUMENT READY FUNCTION-------//
@@ -12,24 +11,33 @@ var $grid;
 //When the page is loaded, run the javascript
 $(document).ready(function() {
 
-
   //SHOWING MUPPETS IN THE GRID without imgs being in the html
-  $(muppetData).each(function(key, value) {
 
-    //jquery append - inserts inside the target
-    var newItem = '<div class="grid-item" data-muppettype="';
-    newItem = newItem + value.category + '" ' + ' data-performer="' + value.originalVoice.replace(/[^0-9A-Za-z]/gi, '') + '" ' + 'data-showtype="' + value.show + '">';
-    newItem = newItem + '<img src="images/muppetImages/' + value.filename + '.png" class="muppetImg" alt="' + value.muppet + '">';
-    newItem = newItem + '<p>'+value.muppet+'</p>';
-    newItem = newItem + '</div>';
+  let $grid = $('.grid');
 
+  console.log(muppetData);
 
-    // add in newItem (the structure of the filename for the muppet images) to the grid
-    $('.grid').append(newItem);
+  muppetData.forEach((value, index) => {
+
+      console.log(value);
+      let $newItem = $('<div />');
+      $newItem.addClass('grid-item');
+      $newItem.attr('data-muppettype', value.category);
+      $newItem.attr('data-performer', value.originalVoice.replace(/[^0-9A-Za-z]/gi, ''));
+      $newItem.attr('data-showtype', value.show);
+
+      let $img = $('<img />');
+      $img.attr('src', 'images/muppetImages/' + value.filename + '.png');
+      $img.attr('alt', value.muppet);
+      $img.addClass('muppetImg');
+
+      let $p = $('<p />').text(value.muppet);
+
+      $newItem.append($img);
+      $newItem.append($p);
+      $grid.append($newItem);
 
   });
-
-
 
   //---ShowType---
 
@@ -84,7 +92,7 @@ $(document).ready(function() {
   // --------ISOTOPE FILTERING STYLES--------
 
   // init Isotope
-  $grid = $('.grid').isotope({
+  $isotopeGrid = $('.grid').isotope({
     itemSelector: '.grid-item',
     layoutMode: 'fitRows'
   });
@@ -151,5 +159,5 @@ function muppetFilter() {
 
 
 
-  $grid.isotope();
+  $isotopeGrid.isotope();
 };
