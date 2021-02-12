@@ -67,9 +67,6 @@ $(document).ready(async function() {
     //Get the Show - this lets you click on any button in this area and only need to write once
     showType = $(this).attr("id");
 
-    // //output these values to console.
-    // console.log("Showing muppets of type " + muppetType + " that appears on " + showType);
-
     muppetFilter();
   });
 
@@ -99,14 +96,8 @@ $(document).ready(async function() {
     showType = "all";
     performer = "all";
 
-    // //output these values to console.
-    // console.log("Showing muppets of type " + muppetType + " that appears on " + showType);
-
     muppetFilter();
   });
-
-
-  // --------ISOTOPE FILTERING STYLES--------
 
   // init Isotope
   $isotopeGrid = $('.grid').isotope({
@@ -114,24 +105,7 @@ $(document).ready(async function() {
     layoutMode: 'fitRows'
   });
 
-  //---- Combination filters --------
-
-
-  // store filter for each group
-  var filters = {};
-
-  // flatten object by concatting values
-  function concatValues(obj) {
-    var value = '';
-    for (var prop in obj) {
-      value += obj[prop];
-    }
-    return value;
-  }
-
 });
-
-
 
 //Overall Function
 function muppetFilter() {
@@ -144,7 +118,6 @@ function muppetFilter() {
 
   //for the other variables
   $("#" + muppetType).addClass('is-clicked');
-
 
   //hide everyone
   $('.grid-item').hide();
@@ -160,8 +133,7 @@ function muppetFilter() {
       var itemShowType = $(this).data("showtype");
       var itemMuppetType = $(this).data("muppettype");
       var itemPerformer = $(this).data("performer")
-      console.log(itemPerformer);
-      console.log(performer);
+
       if (itemShowType == showType || showType == "all") {
         // The show matches
         if (itemMuppetType == muppetType || muppetType == "all") {
