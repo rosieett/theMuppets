@@ -3,39 +3,56 @@ var showType = "all";
 var muppetType = "all";
 var performer = "all";
 
-//-------------------------------------------------------------//
-//-------DOCUMENT READY FUNCTION-------//
-//-------------------------------------------------------------//
+// TODO: Replace the following with your app's Firebase project configuration
+// For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
+var firebaseConfig = {
+  apiKey: "AIzaSyARsi6esToImrDjPI_qLXu4RVlCz3VRsfU",
+  authDomain: "the-muppet-study.firebaseapp.com",
+  projectId: "the-muppet-study",
+  storageBucket: "the-muppet-study.appspot.com",
+  messagingSenderId: "411415656571",
+  appId: "1:411415656571:web:64d53ccc84c38732db0ade",
+  measurementId: "G-XLNX7B1G36"
+};
 
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
 //When the page is loaded, run the javascript
-$(document).ready(function() {
+$(document).ready(async function() {
 
   //SHOWING MUPPETS IN THE GRID without imgs being in the html
 
   let $grid = $('.grid');
 
-  console.log(muppetData);
+  let db = firebase.firestore();
+
+  let muppetDataResponse = await db.collection("muppets").get();
+
+  let muppetData = [];
+
+  muppetDataResponse.forEach(doc => {
+      muppetData.push(doc.data());
+  });
 
   muppetData.forEach((value, index) => {
 
-      console.log(value);
-      let $newItem = $('<div />');
-      $newItem.addClass('grid-item');
-      $newItem.attr('data-muppettype', value.category);
-      $newItem.attr('data-performer', value.originalVoice.replace(/[^0-9A-Za-z]/gi, ''));
-      $newItem.attr('data-showtype', value.show);
+    let $newItem = $('<div />');
+    $newItem.addClass('grid-item');
+    $newItem.attr('data-muppettype', value.category);
+    $newItem.attr('data-performer', value.originalVoice.replace(/[^0-9A-Za-z]/gi, ''));
+    $newItem.attr('data-showtype', value.show);
 
-      let $img = $('<img />');
-      $img.attr('src', 'images/muppetImages/' + value.filename + '.png');
-      $img.attr('alt', value.muppet);
-      $img.addClass('muppetImg');
+    let $img = $('<img />');
+    $img.attr('src', 'images/muppetImages/' + value.filename + '.png');
+    $img.attr('alt', value.muppet);
+    $img.addClass('muppetImg');
 
-      let $p = $('<p />').text(value.muppet);
+    let $p = $('<p />').text(value.muppet);
 
-      $newItem.append($img);
-      $newItem.append($p);
-      $grid.append($newItem);
+    $newItem.append($img);
+    $newItem.append($p);
+    $grid.append($newItem);
 
   });
 

@@ -1,11 +1,16 @@
 import { nyTimesKey } from "./keys.js";
-// import { guardianKey } from "./keys.js";
+import { guardianKey } from "./keys.js";
 
+async function getAPIData(url) {
+    let response = await fetch(url);
 
-//-------------------------------------------------------------//
-//-------DOCUMENT READY FUNCTION-------//
-//-------------------------------------------------------------//
-
+    if (!response.ok) {
+        throw new Error('failed to retrieve site info');
+    }
+        // transform response into JSON
+    const responseJson = await response.json();
+    return responseJson;
+}
 
 //When the page is loaded, run the javascript
 $(document).ready(async () => {
@@ -16,35 +21,20 @@ $(document).ready(async () => {
     const SESAME_STREET_NYT_API_URL = NYT_API_URL + '&q=(’sesame street’)';
 
     //Guard API data
-    // const GUARD_API_URL = `https://content.guardianapis.com/search?show-fields=thumbnail&q=muppets&api-key=${guardianKey}`;
-    // const MUPPETS_GUARD_API_URL = GUARD_API_URL + '&q=muppets';
-    // const SESAME_STREET_GUARD_API_URL = GUARD_API_URL + '&q=sesame%20street';
+    const GUARD_API_URL = `https://content.guardianapis.com/search?show-fields=thumbnail&q=muppets&api-key=${guardianKey}`;
+    const MUPPETS_GUARD_API_URL = GUARD_API_URL + '&q=muppets';
+    const SESAME_STREET_GUARD_API_URL = GUARD_API_URL + '&q=sesame%20street';
 
     // create a variable to go get my url and store it
-    const muppetResponse = await fetch(MUPPETS_NYT_API_URL);
-    const sesameStreetResponse = await fetch(SESAME_STREET_NYT_API_URL);
-    // const muppetGuardResponse = await fetch(MUPPETS_GUARD_API_URL);
-    // const sesameStreetGuardResponse = await fetch(SESAME_STREET_GUARD_API_URL);
-    // console.log(muppetGuardResponse);
-
-    // if it's not ok, let's get out of here
-    if (!muppetResponse.ok || !sesameStreetResponse.ok) {
-        throw new Error('failed to retrieve muppets from nytimes');
-    }
-    //  else if (!muppetGuardResponse.ok || !sesameStreetGuardResponse.ok) {
-    //     throw new Error('failed to retrieve muppets from Guardian');
-    // }
-
-    // transform response into JSON
-    const muppetNytJson = await muppetResponse.json();
-    const sesameStreetNytJson = await sesameStreetResponse.json();
-    // const muppetGuardJson = await muppetGuardResponse.json();
-    // const sesameStreetGuardJson = await sesameStreetGuardResponse.json();
+    const muppetNytJson = await getAPIData(MUPPETS_NYT_API_URL);
+    const sesameStreetNytJson = await getAPIData(SESAME_STREET_NYT_API_URL);
+    const muppetGuardJson = await getAPIData(MUPPETS_GUARD_API_URL);
+    const sesameStreetGuardJson = await getAPIData(SESAME_STREET_GUARD_API_URL);
 
     let muppetArticles = muppetNytJson.response.docs;
     let sesameStreetArticles = sesameStreetNytJson.response.docs;
-    // let muppetGuardArticles = muppetGuardJson.response.results;
-    // let sesameStreetGuardArticles = sesameStreetGuardJson.response.results;
+    let muppetGuardArticles = muppetGuardJson.response.results;
+    let sesameStreetGuardArticles = sesameStreetGuardJson.response.results;
 
     // ---------------
 
@@ -55,9 +45,9 @@ $(document).ready(async () => {
             publishDate: article.pub_date,
             title: article.headline.main,
             articleUrl: article.web_url,
-            imgUrl: article.multimedia[0].url,
+            imgUrl: 'http://www.nytimes.com/' + article.multimedia[0].url,
             category: 'muppets',
-            source: 'New York Times'
+            source: 'nytimes'
         };
 
         return obj;
@@ -70,29 +60,28 @@ $(document).ready(async () => {
             publishDate: article.pub_date,
             title: article.headline.main,
             articleUrl: article.web_url,
-            imgUrl: article.multimedia[0].url,
+            imgUrl: 'http://www.nytimes.com/' + article.multimedia[0].url,
             category: 'sesame-street',
-            source: 'New York Times'
+            source: 'nytimes'
         };
 
         return obj;
     });
 
-    // muppetGuardArticles = muppetGuardArticles.map(article => {
-    //
-    //     let obj = {
-    //         summary: article.pillarName,
-    //         publishDate: article.webPublicationDate,
-    //         title: article.webTitle,
-    //         articleUrl: article.webUrl,
-    //         imgUrl: article.fields['thumbnail'],
-    //         category: 'muppets',
-    //         source: 'The Guardian'
-    //     };
-    //
-    //     return obj;
-    // });
+    muppetGuardArticles = muppetGuardArticles.map(article => {
 
+        let obj = {
+            summary: article.pillarName,
+            publishDate: article.webPublicationDate,
+            title: article.webTitle,
+            articleUrl: article.webUrl,
+            imgUrl: article.fields['thumbnail'],
+            category: 'muppets',
+            source: 'guardian'
+        };
+
+        return obj;
+    });
 
 
     let allArticles = [].concat(muppetArticles, sesameStreetArticles, muppetGuardArticles);
@@ -106,12 +95,8 @@ $(document).ready(async () => {
 
     allArticles.forEach((article, index) => {
 
-        let imgLink = `http://www.nytimes.com/` + article.imgUrl;
-
         let $newItem = $('<div />');
         $newItem.addClass('grid-item ' + article.category + ' ' + article.source);
-
-        //$newItem.attr('data-category', article.category);
 
         let $card = $('<div />');
         $card.addClass('card');
@@ -124,7 +109,7 @@ $(document).ready(async () => {
 
         let $cardImgEmbedItem = $('<div />');
         $cardImgEmbedItem.addClass('embed-responsive-item articleImage');
-        $cardImgEmbedItem.css('background-image', "url('" + imgLink + "')");
+        $cardImgEmbedItem.css('background-image', "url('" + article.imgUrl + "')");
 
         let $h6 = $('<h6 />');
         $h6.addClass('card-title');
