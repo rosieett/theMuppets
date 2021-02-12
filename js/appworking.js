@@ -71,8 +71,14 @@ $(document).ready(async function() {
     muppetFilter();
   });
 
+
+  //When I click on the filter buttons, run this function
   $('#reset .button').click(function(e) {
+
+    //prevent the submit button from refreshing the page
     e.preventDefault();
+
+    //Get the Show - this lets you click on any button in this area and only need to write once
     muppetType = "all";
     showType = "all";
     performer = "all";

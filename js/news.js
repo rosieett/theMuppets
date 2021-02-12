@@ -16,6 +16,19 @@ async function getAPIData(url) {
   return responseJson;
 }
 
+document.onreadystatechange = function () {
+  var state = document.readyState
+  if (state == 'interactive') {
+       document.getElementById('contents').style.visibility="hidden";
+  } else if (state == 'complete') {
+      setTimeout(function(){
+         document.getElementById('interactive');
+         document.getElementById('load').style.visibility="hidden";
+         document.getElementById('contents').style.visibility="visible";
+      },1000);
+  }
+}
+
 //When the page is loaded, run the javascript
 $(document).ready(async () => {
 
@@ -28,7 +41,6 @@ $(document).ready(async () => {
   const GUARD_API_URL = `https://content.guardianapis.com/search?&api-key=${guardianKey}&show-fields=thumbnail,lastModified,body,trailText`;
   const MUPPETS_GUARD_API_URL = GUARD_API_URL + '&q=muppets';
   const SESAME_STREET_GUARD_API_URL = GUARD_API_URL + '&q=sesame%20street';
-  console.log(SESAME_STREET_GUARD_API_URL)
 
   // create a variable to go get my url and store it
   const muppetNytJson = await getAPIData(MUPPETS_NYT_API_URL);
@@ -189,11 +201,6 @@ $(document).ready(async () => {
       filter: filterValue
     });
   });
-
-
-  // $('.buttonGroup .button').not('.reset').on('click', function(e) {
-  //       $(this).toggleClass("is-clicked");
-  //  });
 
    $('.buttonGroup .button').not('.reset').on('click', function(e) {
          $(this).toggleClass("is-clicked");
