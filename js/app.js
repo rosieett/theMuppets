@@ -40,7 +40,7 @@ $(document).ready(async function() {
     let $newItem = $('<div />');
     $newItem.addClass('grid-item');
     $newItem.attr('data-muppettype', value.category);
-    $newItem.attr('data-performer', value.originalVoice.replace(/[^0-9A-Za-z]/gi, ''));
+    // $newItem.attr('data-performer', value.originalVoice.replace(/[^0-9A-Za-z]/gi, ''));
     $newItem.attr('data-showtype', value.show);
 
     let $img = $('<img />');
