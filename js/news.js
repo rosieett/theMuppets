@@ -53,6 +53,8 @@ $(document).ready(async () => {
   let muppetGuardArticles = muppetGuardJson.response.results;
   let sesameStreetGuardArticles = sesameStreetGuardJson.response.results;
 
+
+
   // ---------------
 
   muppetNytArticles = muppetNytArticles.map(article => {
@@ -69,6 +71,7 @@ $(document).ready(async () => {
     };
 
     return obj;
+    console.log(obj)
   });
 
   sesameStreetNytArticles = sesameStreetNytArticles.map(article => {
