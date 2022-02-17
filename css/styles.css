@@ -402,3 +402,19 @@ footer {
     max-width: 1320px;
   }
 }
+.construction{
+  width: 100%
+}
+.underConstruction{
+  margin: 200px 0 200px 0;
+}
+
+.underConstruction h2{
+  text-align: center;
+}
+
+.constructionBottom{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
