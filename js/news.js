@@ -1,9 +1,11 @@
 import {
   nyTimesKey
-} from "./keys.js";
+}
+from "./keys.js";
 import {
   guardianKey
-} from "./keys.js";
+}
+from "./keys.js";
 
 async function getAPIData(url) {
   let response = await fetch(url);
@@ -16,18 +18,20 @@ async function getAPIData(url) {
   return responseJson;
 }
 
-document.onreadystatechange = function () {
-  var state = document.readyState
-  if (state == 'interactive') {
-       document.getElementById('contents').style.visibility="hidden";
-  } else if (state == 'complete') {
-      setTimeout(function(){
-         document.getElementById('interactive');
-         document.getElementById('load').style.visibility="hidden";
-         document.getElementById('contents').style.visibility="visible";
-      },1000);
-  }
-}
+
+
+// document.onreadystatechange = function () {
+//   var state = document.readyState
+//   if (state == 'interactive') {
+//     document.getElementById('contents').style.visibility = "hidden";
+//   } else if (state == 'complete') {
+//     setTimeout(function () {
+//       document.getElementById('interactive');
+//       document.getElementById('load').style.visibility = "hidden";
+//       document.getElementById('contents').style.visibility = "visible";
+//     }, 1000);
+//   }
+// }
 
 //When the page is loaded, run the javascript
 $(document).ready(async () => {
@@ -57,38 +61,39 @@ $(document).ready(async () => {
 
   // ---------------
 
-  muppetNytArticles = muppetNytArticles.map(article => {
+  // muppetNytArticles = muppetNytArticles.map(article => {
 
-    let obj = {
-      summary: article.abstract,
-      publishDate: article.pub_date,
-      title: article.headline.main,
-      articleUrl: article.web_url,
-      imgUrl: 'http://www.nytimes.com/' + article.multimedia[0].url,
-      category: 'muppets',
-      sourceClass: 'nytimes',
-      newsSource: 'New York Times'
-    };
+  //   let obj = {
+  //     summary: article.abstract,
+  //     publishDate: article.pub_date,
+  //     title: article.headline.main,
+  //     articleUrl: article.web_url,
+  //     imgUrl: 'http://www.nytimes.com/' + article.multimedia[0].url,
+  //     category: 'muppets',
+  //     sourceClass: 'nytimes',
+  //     newsSource: 'New York Times'
+  //   };
 
-    return obj;
-    console.log(obj)
-  });
 
-  sesameStreetNytArticles = sesameStreetNytArticles.map(article => {
 
-    let obj = {
-      summary: article.abstract,
-      publishDate: article.pub_date,
-      title: article.headline.main,
-      articleUrl: article.web_url,
-      imgUrl: 'http://www.nytimes.com/' + article.multimedia[0].url,
-      category: 'sesame-street',
-      sourceClass: 'nytimes',
-      newsSource: 'New York Times'
-    };
+  //   return obj;
+  // });
 
-    return obj;
-  });
+  // sesameStreetNytArticles = sesameStreetNytArticles.map(article => {
+
+  //   let obj = {
+  //     summary: article.abstract,
+  //     publishDate: article.pub_date,
+  //     title: article.headline.main,
+  //     articleUrl: article.web_url,
+  //     imgUrl: 'http://www.nytimes.com/' + article.multimedia[0].url,
+  //     category: 'sesame-street',
+  //     sourceClass: 'nytimes',
+  //     newsSource: 'New York Times'
+  //   };
+
+  //   return obj;
+  // });
 
   muppetGuardArticles = muppetGuardArticles.map(article => {
 
@@ -185,6 +190,7 @@ $(document).ready(async () => {
 
   });
 
+
   // --------ISOTOPE FILTERING STYLES--------
 
   // init Isotope
@@ -198,20 +204,20 @@ $(document).ready(async () => {
   });
 
   // filter items on button click
-  $('.buttonGroup').on('click', 'a', function() {
+  $('.buttonGroup').on('click', 'a', function () {
     let filterValue = $(this).attr('data-filter');
     $grid.isotope({
       filter: filterValue
     });
   });
 
-   $('.buttonGroup .button').not('.reset').on('click', function(e) {
-         $(this).toggleClass("is-clicked");
-    });
-
-   $('.buttonGroup .reset').on('click', function(e) {
-         $('.buttonGroup .button').removeClass("is-clicked");
-    });
-
-
+  $('.buttonGroup .button').not('.reset').on('click', function (e) {
+    $(this).toggleClass("is-clicked");
   });
+
+  $('.buttonGroup .reset').on('click', function (e) {
+    $('.buttonGroup .button').removeClass("is-clicked");
+  });
+
+
+});
